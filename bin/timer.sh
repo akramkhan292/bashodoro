@@ -15,10 +15,11 @@ start_timer() {
 
         if [[ $keyPress == "p" || $keyPress == "P" ]]; then
             pause_timer "$i"
+            bash bin/notify.sh pause
             return
         fi
     done
-    bash bin/notify.sh "Time's up!"
+    bash bin/notify.sh complete
 }
 
 # Todo - put these functions in a utility file
